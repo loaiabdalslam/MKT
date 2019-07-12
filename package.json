@@ -1,0 +1,28 @@
+{
+  "name": "@loaiabdalsalm/mkt",
+  "version": "1.0.0",
+  "description": "marketcap,currency,crypto currency,stocks,exchange currency",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loaiabdalslam/MKT.git"
+  },
+  "keywords": [
+    "marketcap",
+    "currency",
+    "crypto",
+    "currency",
+    "stocks",
+    "exchange",
+    "currency"
+  ],
+  "author": "loaiabdalslam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/loaiabdalslam/MKT/issues"
+  },
+  "homepage": "https://github.com/loaiabdalslam/MKT#readme"
+}
