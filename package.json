@@ -1,7 +1,7 @@
 {
   "name": "@loaiabdalsalm/mkt",
   "version": "1.0.0",
-  "description": "marketcap,currency,crypto currency,stocks,exchange currency",
+  "description": "Exchange Price Service , Stocks , Cryptocurrency,Stock prediction and more",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,7 +19,7 @@
     "exchange",
     "currency"
   ],
-  "author": "loaiabdalslam",
+  "author": "@loaiabdalsalm/mkt",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/loaiabdalslam/MKT/issues"
