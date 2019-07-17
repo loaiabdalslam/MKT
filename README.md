@@ -1,7 +1,10 @@
 # MKT
-
+![mkt](https://img.shields.io/npm/dw/@mkt-eg/mkt.svg)
+![mkt](https://img.shields.io/github/stars/loaiabdalslam/MKT.svg?style=social)
+![mkt](https://img.shields.io/github/forks/loaiabdalslam/MTK.svg?style=social)
+![mkt](https://img.shields.io/github/contributors/loaiabdalslam/MKT.svg?style=social)
+![mkt](https://img.shields.io/github/last-commit/loaiabdalslam/mkt.svg)
 ![MKT.JS](./media/mkt.jpg)
-
 
 MKT.js is an Exchange Price Service , Stocks , Cryptocurrency,Stock prediction and more \
 This package contains hundreds of currencies, cryptocurrencies and stocks prices.\
