@@ -1,6 +1,6 @@
 {
-  "name": "@loai/mkt",
-  "version": "1.0.0",
+  "name": "@mkt-eg/mkt",
+  "version": "1.0.1",
   "description": "Exchange Price Service , Stocks , Cryptocurrency,Stock prediction and more",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/loaiabdalslam/MKT#readme",
   "dependencies": {
+    "@tensorflow/tfjs": "^1.2.3",
     "axios": "^0.19.0"
   }
 }
