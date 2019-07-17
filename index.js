@@ -1,6 +1,6 @@
-const { sympolPrice } = require("./price")
-const { get } = require("./helper/fetch")
-const link = "https://min-api.cryptocompare.com/data/";
+const { sympolPrice } = require('./module/price')
+const { get } = require('./helper/fetch')
+const link = 'https://min-api.cryptocompare.com/data/'
 
 module.exports = {
   MKT: function (api) {

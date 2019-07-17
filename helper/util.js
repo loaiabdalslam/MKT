@@ -2,7 +2,7 @@ const SECS_IN_DAY = 86400
 
 function convertPriceArrayToMap (priceArray) {
   const map = new Map()
-  for (let price of priceArray) {
+  for (var price of priceArray) {
     const time = secsToDate(price.time)
     map.set(startOfDay(time).valueOf(), Object.assign({}, price, { time }))
   }
