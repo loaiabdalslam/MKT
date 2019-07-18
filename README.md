@@ -18,7 +18,13 @@ for market forecasting / stock prediction using RNN and also works on the visual
 - Main Api ( min-api.cryptocompare.com )
 
 
-###  Get started : 
+###  Get started :
+
+```
+npm i @mkt-eg/mkt
+
+```
+
 #### 1 -  Get Full details response (multiaple fsym & tsym)
 
 ```
