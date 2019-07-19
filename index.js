@@ -30,21 +30,3 @@ module.exports = {
     }
   }
 }
-
-let MKT = new module.exports.MKT('bbbc22c3a13c74456a6d4bb7ba5745476ebfdc81c867fc240258122b78eb6a6f')
-MKT.historical({
-  sympolPrice: 'true',
-  e: 'CCCAGG',
-  fsym: 'BTC',
-  tsyms: 'USD',
-  type: 'single',
-  aggregate: '1',
-  aggregatePredictableTimePeriods: true,
-  limit: 5,
-  allData: 'false',
-  extraParams: 'NotAvailable',
-  sign: 'false',
-  apiType: 'hour'
-}).then((results)=>{
- console.log(JSON.stringify(results.data))
-})
