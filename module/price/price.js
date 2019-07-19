@@ -24,6 +24,5 @@ module.exports = {
           : 'error'
     const params = `${queryType}&tsyms=${tsyms}&`
     return params
-
   }
 }
