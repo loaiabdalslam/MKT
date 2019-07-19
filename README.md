@@ -1,10 +1,11 @@
 # MKT
+
+![MKT.JS](./media/mkt.jpg)
+
 ![mkt](https://img.shields.io/npm/dw/@mkt-eg/mkt.svg)
 ![mkt](https://img.shields.io/github/stars/loaiabdalslam/MKT.svg?style=social)
 ![mkt](https://img.shields.io/github/forks/loaiabdalslam/MTK.svg?style=social)
-![mkt](https://img.shields.io/github/contributors/loaiabdalslam/MKT.svg?style=social)
 ![mkt](https://img.shields.io/github/last-commit/loaiabdalslam/mkt.svg)
-![MKT.JS](./media/mkt.jpg)
 
 MKT.js is an Exchange Price Service , Stocks , Cryptocurrency,Stock prediction and more \
 This package contains hundreds of currencies, cryptocurrencies and stocks prices.\
@@ -210,6 +211,115 @@ const data = mkt
 
 ```
 
+
+#### 3 - Historical Day/hour/minute OHLCV
+Get open, high, low, close, volumefrom and volumeto from the daily historical data.The values are based on 00:00 GMT time. It uses BTC conversion if data is not available because the coin is not trading in the specified currency. If you want to get all the available historical data, you can use limit=2000 and keep going back in time using the toTs param. You can then keep requesting batches using: &limit=2000&toTs={the earliest timestamp received}.
+
+ * apiType parms : 'day' or 'hour' or 'minute'
+ * you can left some parameter empty its okay 
+ * to know more about Request Params please read [Here](https://min-api.cryptocompare.com/documentation?key=Historical&cat=dataHistoday) 
+
+```
+const MKT = new module.exports.MKT('bbbc22c3a13c74456a6d4bb7ba5745476ebfdc81c867fc240258122b78eb6a6f')
+MKT.historical({
+  sympolPrice: 'true',
+  e: 'CCCAGG',
+  fsym: 'BTC',
+  tsyms: 'USD',
+  type: 'single',
+  aggregate: '1',
+  aggregatePredictableTimePeriods: true,
+  limit: 100,
+  allData: 'false',
+  extraParams: 'NotAvailable',
+  sign: 'false',
+  apiType: 'hour'
+}).then((results)=>{
+ console.log(results.data)
+})
+
+// JSON OUTPUT 
+/*
+{
+   "Response":"Success",
+   "Type":100,
+   "Aggregated":false,
+   "Data":[
+      {
+         "time":1563526800,
+         "close":10358.27,
+         "high":10406.85,
+         "low":10277.92,
+         "open":10376.84,
+         "volumefrom":2507.84,
+         "volumeto":25941945.52
+      },
+      {
+         "time":1563530400,
+         "close":10342.75,
+         "high":10402.72,
+         "low":10271.27,
+         "open":10358.27,
+         "volumefrom":2464.21,
+         "volumeto":25476339.6
+      },
+      {
+         "time":1563534000,
+         "close":10297.03,
+         "high":10412.81,
+         "low":10287.51,
+         "open":10342.75,
+         "volumefrom":2049.12,
+         "volumeto":21172424.41
+      },
+      {
+         "time":1563537600,
+         "close":10506.18,
+         "high":10654.99,
+         "low":10234.52,
+         "open":10297.03,
+         "volumefrom":5671.63,
+         "volumeto":59565785.39
+      },
+      {
+         "time":1563541200,
+         "close":10319.53,
+         "high":10510.44,
+         "low":10135.16,
+         "open":10506.18,
+         "volumefrom":7043.95,
+         "volumeto":72409649.25
+      },
+      {
+         "time":1563544800,
+         "close":10341.37,
+         "high":10425.08,
+         "low":10284.69,
+         "open":10319.53,
+         "volumefrom":1326,
+         "volumeto":13724171.79
+      }
+   ],
+   "TimeTo":1563544800,
+   "TimeFrom":1563526800,
+   "FirstValueInArray":true,
+   "ConversionType":{
+      "type":"direct",
+      "conversionSymbol":""
+   },
+   "RateLimit":{
+
+   },
+   "HasWarning":false
+}
+
+*/
+
+```
+
+
+
+
 ## Some of the ideas I put forward and you can get started:
 - Add processing of natural languages to increase confidence in prices that have been predicted 
 - Add simulation of the investment process and the development of some strategies of trades.
@@ -222,5 +332,5 @@ const data = mkt
 - For the rest, if you think of an idea, you should make pull request and apply it immediately.
 
 
-author : Loaii abdalslam 
+Author : Loaii abdalslam 
 
