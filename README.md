@@ -246,7 +246,7 @@ MKT.historical({
    "Type":100,
    "Aggregated":false,
    "Data":[
-
+      
       {
          "time":1563544800,
          "close":10341.37,
@@ -275,9 +275,9 @@ MKT.historical({
 
 ```
 
-#### 4 - Stock Prediction
+#### 4 - Stock Prediction 
 
-Before you start in this section, I recommend that you consult some libraries that can help you to build Neural Network through JavaScript, because we will use them in this section like : [Brain.js]([https://github.com/BrainJS/brain.js](https://github.com/BrainJS/brain.js)
+Before you start in this section, I recommend that you consult some libraries that can help you to build Neural Network through JavaScript, because we will use them in this section like : [Brain.js]([https://github.com/BrainJS/brain.js)
 
 ````
 
@@ -299,7 +299,7 @@ MKT.historical({
   sign: 'false',
   apiType: 'day'
 }).then((results)=>{
-const data = JSON.stringify(results.data)
+const data = JSON.stringify(results.data) 
 const options = {
 rawData:data,
 chunkSize:5,// split data into 5 series array
@@ -322,11 +322,11 @@ trainOptions:{
       callback: null,       // a periodic call back that can be triggered while training --> null or function
       callbackPeriod: 10,   // the number of iterations through the training data between callback calls --> number greater than 0
       timeout: Infinity     // the max number of milliseconds to train for --> number greater than 0
-}
+} 
 }
 
  console.log(MKT.predict(options))
-
+ 
 })
 
 
