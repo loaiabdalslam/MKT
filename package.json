@@ -1,6 +1,6 @@
 {
   "name": "@mkt-eg/mkt",
-  "version": "1.1.4",
+  "version": "1.2.6",
   "description": "Exchange Price Service , Stocks , Cryptocurrency,Stock prediction and more",
   "main": "index.js",
   "scripts": {

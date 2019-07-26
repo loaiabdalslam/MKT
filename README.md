@@ -1,10 +1,11 @@
-# [MKT](https://loaiabdalslam.github.io/mkt-website/)
+
+# MKT
 
 ![MKT.JS](./media/mkt.jpg)
 
 ![mkt](https://img.shields.io/npm/dw/@mkt-eg/mkt.svg)
 ![mkt](https://img.shields.io/github/stars/loaiabdalslam/MKT.svg?style=social)
-![mkt](https://img.shields.io/github/forks/loaiabdalslam/MTK.svg?style=social)
+![mkt](https://img.shields.io/github/forks/loaiabdalslam/MKT.svg?style=social)
 ![mkt](https://img.shields.io/github/last-commit/loaiabdalslam/mkt.svg)
 
 MKT.js is an Exchange Price Service , Stocks , Cryptocurrency,Stock prediction and more \
@@ -14,19 +15,12 @@ for market forecasting / stock prediction using RNN and also works on the visual
 
 ## Dependencies
 - Neural Networks (brain.js)
-- Tensorflow Framework (tensorflow.js)
-- Data visualization (canvas.js)
+- Tensorflow Framework ( tensorflow.js )
 - Main Api ( min-api.cryptocompare.com )
 
 
 ###  Get started :
-
-```
-npm i @mkt-eg/mkt
-
-```
-
-#### 1 -  Get Full details response (multiaple fsym & tsym)
+#### 1 -  Get Full details response (multiple fsym & tsym)
 
 ```
 const { MKT } = require('@mkt-eg/mkt')
@@ -46,9 +40,11 @@ const data = mkt
   .catch(error => {
     console.log(error)
   })
-  
-// JSON OUTPUT 
-/* 
+```
+JSON OUTPUT
+
+```
+
 {
    "RAW":{
       "BTC":{
@@ -141,8 +137,6 @@ const data = mkt
 }
 
 
-*/
-
 ```
 
 #### 2 -  Get Single price response (Single Ftsym only)
@@ -155,7 +149,7 @@ const mkt = new MKT(
 )
 const data = mkt
   .exchange({
-    fsym: 'BTC', // Single Fysm only 
+    fsym: 'BTC', // Single Fysm only
     tsyms: 'USD,EGP', // Multiaple Tsyms is allowed
     type: 'single'
   })
@@ -166,16 +160,18 @@ const data = mkt
     console.log(error)
   })
 
-// JSON OUTPUT 
+```
+JSON OUTPUT
 
+```
 {
    "USD":9888.01,
    "EGP":182256.26
 }
+````
 
-```
 
-#### 3 -  Get Multiaple price response 
+#### 3 -  Get Multiaple price response
 
 ```
 const { MKT } = require('@mkt-eg/mkt')
@@ -185,7 +181,7 @@ const mkt = new MKT(
 )
 const data = mkt
   .exchange({
-    fsym: 'BTC,ETH', // Single Fysm only 
+    fsym: 'BTC,ETH', // Single Fysm only
     tsyms: 'USD,EGP', // Multiaple Tsyms is allowed
     type: 'multi'
   })
@@ -196,8 +192,10 @@ const data = mkt
     console.log(error)
   })
 
-// JSON OUTPUT 
+```
+ JSON OUTPUT
 
+```
 {
    "BTC":{
       "USD":9906.65,
@@ -212,15 +210,16 @@ const data = mkt
 ```
 
 
-#### 3 - Historical Day/hour/minute OHLCV
+#### 4 - Historical Day/hour/minute OHLCV
 Get open, high, low, close, volumefrom and volumeto from the daily historical data.The values are based on 00:00 GMT time. It uses BTC conversion if data is not available because the coin is not trading in the specified currency. If you want to get all the available historical data, you can use limit=2000 and keep going back in time using the toTs param. You can then keep requesting batches using: &limit=2000&toTs={the earliest timestamp received}.
 
  * apiType parms : 'day' or 'hour' or 'minute'
- * you can left some parameter empty its okay 
- * to know more about Request Params please read [Here](https://min-api.cryptocompare.com/documentation?key=Historical&cat=dataHistoday) 
+ * you can left some parameter empty its okay
+ * to know more about Request Params please read [Here](https://min-api.cryptocompare.com/documentation?key=Historical&cat=dataHistoday)
 
 ```
-const MKT = new module.exports.MKT('bbbc22c3a13c74456a6d4bb7ba5745476ebfdc81c867fc240258122b78eb6a6f')
+const { MKT } = require('@mkt-eg/mkt')
+const MKT = new MKT('bbbc22c3a13c74456a6d4bb7ba5745476ebfdc81c867fc240258122b78eb6a6f')
 MKT.historical({
   sympolPrice: 'true',
   e: 'CCCAGG',
@@ -237,59 +236,17 @@ MKT.historical({
 }).then((results)=>{
  console.log(results.data)
 })
+```
+ JSON OUTPUT
 
-// JSON OUTPUT 
-/*
+```
+
 {
    "Response":"Success",
    "Type":100,
    "Aggregated":false,
    "Data":[
-      {
-         "time":1563526800,
-         "close":10358.27,
-         "high":10406.85,
-         "low":10277.92,
-         "open":10376.84,
-         "volumefrom":2507.84,
-         "volumeto":25941945.52
-      },
-      {
-         "time":1563530400,
-         "close":10342.75,
-         "high":10402.72,
-         "low":10271.27,
-         "open":10358.27,
-         "volumefrom":2464.21,
-         "volumeto":25476339.6
-      },
-      {
-         "time":1563534000,
-         "close":10297.03,
-         "high":10412.81,
-         "low":10287.51,
-         "open":10342.75,
-         "volumefrom":2049.12,
-         "volumeto":21172424.41
-      },
-      {
-         "time":1563537600,
-         "close":10506.18,
-         "high":10654.99,
-         "low":10234.52,
-         "open":10297.03,
-         "volumefrom":5671.63,
-         "volumeto":59565785.39
-      },
-      {
-         "time":1563541200,
-         "close":10319.53,
-         "high":10510.44,
-         "low":10135.16,
-         "open":10506.18,
-         "volumefrom":7043.95,
-         "volumeto":72409649.25
-      },
+      
       {
          "time":1563544800,
          "close":10341.37,
@@ -298,7 +255,10 @@ MKT.historical({
          "open":10319.53,
          "volumefrom":1326,
          "volumeto":13724171.79
-      }
+      },
+      {..},
+      {..},
+      {..}
    ],
    "TimeTo":1563544800,
    "TimeFrom":1563526800,
@@ -313,15 +273,83 @@ MKT.historical({
    "HasWarning":false
 }
 
-*/
+```
 
+#### 4 - Stock Prediction 
+
+Before you start in this section, I recommend that you consult some libraries that can help you to build Neural Network through JavaScript, because we will use them in this section like : [Brain.js]([https://github.com/BrainJS/brain.js)
+
+````
+
+const array = require('lodash/array');
+const { MKT } = require('@mkt-eg/mkt')
+
+const MKT = new MKT('bbbc22c3a13c74456a6d4bb7ba5745476ebfdc81c867fc240258122b78eb6a6f')
+MKT.historical({
+  sympolPrice: 'true',
+  e: 'CCCAGG',
+  fsym: 'BTC',
+  tsyms: 'USD',
+  type: 'single',
+  aggregate: '1',
+  aggregatePredictableTimePeriods: true,
+  limit: 30,
+  allData: 'false',
+  extraParams: 'NotAvailable',
+  sign: 'false',
+  apiType: 'day'
+}).then((results)=>{
+const data = JSON.stringify(results.data) 
+const options = {
+rawData:data,
+chunkSize:5,// split data into 5 series array
+forcastList:array.chunk(rawData,5)[3], // Get The last series from data.
+steps:30, // predicit the next 30 days
+NNOptions: {
+      inputSize: 4,
+      hiddenLayers: [4,4],
+      outputSize: 4,
+      learningRate: 0.01,
+      decayRate: 0.999,
+},    
+trainOptions:{
+      iterations: 20000,    // the maximum times to iterate the training data --> number greater than 0
+      errorThresh: 0.005,   // the acceptable error percentage from training data --> number between 0 and 1
+      log: true,           // true to use console.log, when a function is supplied it is used --> Either true or a function
+      logPeriod: 10,        // iterations between logging out --> number greater than 0
+      learningRate: 0.3,    // scales with delta to effect training rate --> number between 0 and 1
+      momentum: 0.1,        // scales with next layer's change value --> number between 0 and 1
+      callback: null,       // a periodic call back that can be triggered while training --> null or function
+      callbackPeriod: 10,   // the number of iterations through the training data between callback calls --> number greater than 0
+      timeout: Infinity     // the max number of milliseconds to train for --> number greater than 0
+} 
+}
+
+ console.log(MKT.predict(options))
+ 
+})
+
+
+````
+
+Output
+```
+[ {
+	"close":11740.34,
+	"high":11778.22,
+	"low":10992.37,
+	"open":11035.74,
+   },
+   {..},
+   {..},
+   {..}
+   ...
+]
 ```
 
 
-
-
 ## Some of the ideas I put forward and you can get started:
-- Add processing of natural languages to increase confidence in prices that have been predicted 
+- Add processing of natural languages to increase confidence in prices that have been predicted
 - Add simulation of the investment process and the development of some strategies of trades.
 - Monitor the markets and manufacture a global dashboard.
 - add simples and examples using MKT.JS
@@ -332,5 +360,4 @@ MKT.historical({
 - For the rest, if you think of an idea, you should make pull request and apply it immediately.
 
 
-Author : Loaii abdalslam 
-
+Author : Loaii abdalslam
