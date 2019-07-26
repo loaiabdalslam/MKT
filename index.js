@@ -1,5 +1,6 @@
 const { sympolPrice } = require('./module/price/price')
 const { historicalPrice } = require('./module/historical/historical')
+const { predict } = require('./lab/brain')
 const { get } = require('./helper/fetch')
 
 const link = 'https://min-api.cryptocompare.com/data/'
@@ -27,6 +28,10 @@ module.exports = {
       const historicalType = data[dict.apiType]
       const requestLink = historicalType + historicalPrice(dict) + this.apikey()
       return get(requestLink)
+    }
+
+    this.predict = options => {
+      return predict(options)
     }
   }
 }

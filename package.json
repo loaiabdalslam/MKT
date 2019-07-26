@@ -27,6 +27,8 @@
   "homepage": "https://github.com/loaiabdalslam/MKT#readme",
   "dependencies": {
     "@tensorflow/tfjs": "^1.2.3",
-    "axios": "^0.19.0"
+    "axios": "^0.19.0",
+    "brain.js": "^1.6.1",
+    "lodash": "^4.17.15"
   }
 }
